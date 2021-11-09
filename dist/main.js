@@ -1,1 +1,1 @@
-console.log("hello world");
+(()=>{console.log("hello world");class e{getWeatherInfo(){fetch("http://api.openweathermap.org/data/2.5/weather?q=San%20Diego&APPID=cf59f533d7699be0364c16aa6a3d8741",{mode:"cors"}).then((function(e){return console.log(e.json()),console.log("this is working"),e.json}))}}(()=>{let o=e,t=JSON.parse(o.getWeatherInfo);console.table(t)})()})();
