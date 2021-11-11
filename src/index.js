@@ -6,9 +6,13 @@ const weatherInfo = (()=>{
             mode: 'cors'
         })
         .then(function(response){
-            console.log(response.json());
-            console.log("this is working")
-        });
+
+            return response.json();
+
+        })
+        .then(function(response){
+            console.log(response.main.humidity);
+        })
     }
         return {
             getWeatherInfo,
