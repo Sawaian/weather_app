@@ -1,8 +1,8 @@
 console.log("hello world");
 
 const weatherInfo = (()=>{
-    function getWeatherInfo(){
-        fetch('http://api.openweathermap.org/data/2.5/weather?q=San%20Diego&APPID=cf59f533d7699be0364c16aa6a3d8741', {
+    function getWeatherInfo(location){
+        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=cf59f533d7699be0364c16aa6a3d8741', {
             mode: 'cors'
         })
         .then(function(response){
@@ -20,8 +20,11 @@ const weatherInfo = (()=>{
 })();
 
 const weatherUI = (()=>{
-    let weatherObject = weatherInfo.getWeatherInfo();
+    let weatherObject = weatherInfo.getWeatherInfo('London');
     
     // let weatherResult = JSON.parse(weatherObject.getWeatherInfo);
     // console.table(weatherResult);
 })();
+
+
+//http://api.openweathermap.org/data/2.5/weather?q=San%20Diego&APPID=cf59f533d7699be0364c16aa6a3d8741
