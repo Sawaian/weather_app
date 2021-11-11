@@ -1,4 +1,4 @@
-console.log("hello world");
+import { humidity  } from "./weatherDom";
 
 const weatherInfo = (()=>{
     function getWeatherInfo(location){

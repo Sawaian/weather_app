@@ -8,4 +8,6 @@ class domGen {
     }
 }
 
-let humidity = domGen.divMaker(humidity);
+let humidity = domGen.divMaker(humid)
+
+export { humidity }
