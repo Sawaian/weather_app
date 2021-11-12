@@ -9,12 +9,10 @@ const weatherInfo = (()=>{
             mode: 'cors'
         })
         .then(function(response){
-
             return response.json();
-
         })
         .then(function(response){
-            console.log(response.main.humidity);
+         return response.main.humidity
         })
     }
         return {
@@ -25,7 +23,7 @@ const weatherInfo = (()=>{
 function weatherUI(){
     let humidity = document.querySelector('.humidity');
     let weatherObject = weatherInfo.getWeatherInfo('London');
-    humidity.textContent = weatherObject;
+    console.log(JSON.parse(weatherObject))
 };
 
 const pageLoad = (()=>{
