@@ -6,13 +6,26 @@ const pageLoad = (()=>{
     console.log("calling")
 })();
 
+
+// class kelvinConvert {
+
+
+//     //(K − 273.15) × 9/5 + 32 = °F. 
+//     fahrenheit (temp){
+//         let result = (temp - 273.15) * 9/5 + 32;
+//         console.log(result + " " + "SD temp")
+//     }
+// }
+
+// let fahrenheit = new kelvinConvert;
+
 const weatherInfo = (()=>{
 
     let temp = getWeatherInfo('San Diego');
     let humidity = document.querySelector('.humidity');
 
     function getWeatherInfo(location){
-        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=cf59f533d7699be0364c16aa6a3d8741', {
+        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=imperial&APPID=cf59f533d7699be0364c16aa6a3d8741', {
             mode: 'cors'
         })
         .then(function(response){
@@ -32,8 +45,6 @@ const weatherInfo = (()=>{
         }
 })();
 
-    // let weatherResult = JSON.parse(weatherObject.getWeatherInfo);
-    // console.table(weatherResult);
 
 
 
