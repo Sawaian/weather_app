@@ -1,11 +1,15 @@
 import { domGenerator } from "./weatherDom";
 import './styles.css';
 
-
+const pageLoad = (()=>{
+    domGenerator.divMaker('humidity');
+    console.log("calling")
+})();
 
 const weatherInfo = (()=>{
 
     let temp = getWeatherInfo('San Diego');
+    let humidity = document.querySelector('.humidity');
 
     function getWeatherInfo(location){
         fetch('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&APPID=cf59f533d7699be0364c16aa6a3d8741', {
@@ -18,6 +22,7 @@ const weatherInfo = (()=>{
         })
         .then(function(response){
             temp = response.main.temp
+            humidity.textContent = `${temp}`;
             console.log(temp)
            return temp;
         })
@@ -27,23 +32,6 @@ const weatherInfo = (()=>{
         }
 })();
 
-async function weatherUI(){
-    let humidity = document.querySelector('.humidity');
-
-    let tempResult = await weatherInfo.temp;
-    console.log(tempResult)
-};
-
-const pageLoad = (()=>{
-    domGenerator.divMaker('humidity');
-    weatherUI()
-    console.log("calling")
-})();
-
-    
- 
- 
-    
     // let weatherResult = JSON.parse(weatherObject.getWeatherInfo);
     // console.table(weatherResult);
 
