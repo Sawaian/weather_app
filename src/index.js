@@ -1,5 +1,7 @@
-import { humidity  } from "./weatherDom";
+import { domGenerator } from "./weatherDom";
 import './styles.css';
+
+
 
 const weatherInfo = (()=>{
     function getWeatherInfo(location){
@@ -20,16 +22,18 @@ const weatherInfo = (()=>{
         }
 })();
 
-const weatherUI = (()=>{
-
+function weatherUI(){
+    let humidity = document.querySelector('.humidity');
     let weatherObject = weatherInfo.getWeatherInfo('London');
+    humidity.textContent = weatherObject;
+};
 
-            async function humidityControl(){
-                console.log("calling");
-                let humidity = await document.querySelector('humidity');
-                return humidity; 
-            }
+const pageLoad = (()=>{
+    domGenerator.divMaker('humidity');
+    weatherUI()
+    console.log("calling")
 })();
+
     
  
  

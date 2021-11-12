@@ -10,4 +10,4 @@ class domGen {
 
 let domGenerator = new domGen
 
-domGenerator.divMaker('johnny');
+export{ domGenerator }
