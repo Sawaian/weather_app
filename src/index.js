@@ -6,19 +6,6 @@ const pageLoad = (()=>{
     console.log("calling")
 })();
 
-
-// class kelvinConvert {
-
-
-//     //(K − 273.15) × 9/5 + 32 = °F. 
-//     fahrenheit (temp){
-//         let result = (temp - 273.15) * 9/5 + 32;
-//         console.log(result + " " + "SD temp")
-//     }
-// }
-
-// let fahrenheit = new kelvinConvert;
-
 const weatherInfo = (()=>{
 
     let temp = getWeatherInfo('San Diego');
