@@ -18,7 +18,6 @@ const weatherInfo = (()=>{
         .then(function(response){
             console.log(response);
             return response.json();
-
         })
         .then(function(response){
             temp = response.main.temp
@@ -26,12 +25,33 @@ const weatherInfo = (()=>{
             console.log(temp)
            return temp;
         })
+
+        .catch(function(err){
+            console.log(err)
+        })
     }
         return {
             getWeatherInfo,
         }
 })();
 
+
+const locationModule = (()=> {
+
+    let myLocation = document.getElementById("inputField");
+
+    myLocation.addEventListener('submit', ()=>{
+        function grabUserInput(){
+            let userInput = myLocation.value;
+            localStorage.setItem(userInput);
+            console.log(userInput);
+        }
+    })
+    
+    
+})();
+// weather info temp is called. 
+// input goes into the function call .
 
 
 
