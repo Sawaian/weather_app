@@ -10,4 +10,7 @@ class domGen {
 
 let domGenerator = new domGen
 
+
+
 export{ domGenerator }
+

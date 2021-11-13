@@ -4,6 +4,11 @@ import './styles.css';
 const pageLoad = (()=>{
     domGenerator.divMaker('humidity');
     console.log("calling")
+
+        checkIfSet(){
+            
+        }
+    checkIfSet()
 })();
 
 const weatherInfo = (()=>{
