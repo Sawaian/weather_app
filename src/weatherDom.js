@@ -10,7 +10,12 @@ class domGen {
 
 let domGenerator = new domGen
 
+function weatherDataDisplayed (cityData){
+    let temp = document.querySelector('.temp');
+    let city = document.querySelecotr('.city');
 
+    temp.textContent = cityData.temperature
+}
 
-export{ domGenerator }
+export{ domGenerator, weatherDataDisplayed }
 

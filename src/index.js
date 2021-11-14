@@ -1,17 +1,25 @@
-import { domGenerator } from "./weatherDom";
+import { domGenerator, weatherDataDisplayed } from "./weatherDom";
 import './styles.css';
+import { weatherInfo } from "./weatherData";
 
 const cityForm = document.getElementById("location");
 cityForm.addEventListener('submit', (event)=>{
     event.preventDefault();
+
+    cityForm.addEventListener('submit', async ()=> {
+        const citySearch = await weatherInfo.getWeatherInfo('London');
+        weatherDataDisplayed(citySearch);
+    
+    })
 });
 
-c
+
+
+
 
 const pageLoad = (()=>{
     domGenerator.divMaker('temp');
     domGenerator.divMaker('city');
-    domGenerator.divMaker('name');
     console.log("calling")
 })();
 
