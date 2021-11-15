@@ -13,10 +13,6 @@ cityForm.addEventListener('submit', (event)=>{
     })
 });
 
-
-
-
-
 const pageLoad = (()=>{
     domGenerator.divMaker('temp');
     domGenerator.divMaker('city');

@@ -1,27 +1,26 @@
 const weatherInfo = (()=>{
 
-    function weatherJson (cityData){
+    function weatherJson (data){
         const {
             name: city,
             main: { temp: temperature },
-        } = cityData;
+        } = data;
         return { city, temperature};
     }
-
-    let temp = getWeatherInfo('San Diego');
 
     async function getWeatherInfo(location){
 
         let cityLocation = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=imperial&APPID=cf59f533d7699be0364c16aa6a3d8741';
-
+        try{
             const newCity = await fetch(cityLocation, { mode: 'cors'})
-            .catch(function(err){
+            const cityData = weatherJson(await newCity.json())
+            return cityData;
+            }
+            catch(err){
                 console.log(err)
-            })
-            const cityData = weatherJson(newCity.json())
+            }
             // humidity.textContent = `${temp}`;
-            console.log(temp)
-           return temp;
+            
         }
 
         return {

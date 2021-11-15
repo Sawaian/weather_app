@@ -1,3 +1,4 @@
+// Dynamically generated divs.
 class domGen {
 
     divMaker(divType){
@@ -10,11 +11,13 @@ class domGen {
 
 let domGenerator = new domGen
 
+
 function weatherDataDisplayed (cityData){
     let temp = document.querySelector('.temp');
-    let city = document.querySelecotr('.city');
+    let city = document.querySelector('.city');
 
-    temp.textContent = cityData.temperature
+    temp.textContent = cityData.temperature;
+    city.textContent = cityData.name;
 }
 
 export{ domGenerator, weatherDataDisplayed }
