@@ -19,7 +19,7 @@ const weatherInfo = (()=>{
     // Async lets the code work and wait for the requests.
     async function getWeatherInfo(location){ //Step 4:
         //Step 5: A vaariable set up to hold the location we request.
-        let cityLocation = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=imperial&APPID=cf59f533d7699be0364c16aa6a3d8741';
+        let cityLocation = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=cf59f533d7699be0364c16aa6a3d8741`;
         // Step 6: will attempt to resolve what is within this codeblock.
         try{
             //Step 7: newCity will await on fetch to be resolved before continuing.

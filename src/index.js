@@ -3,11 +3,12 @@ import './styles.css';
 import { weatherInfo } from "./weatherData";
 
 const cityForm = document.getElementById("location");
+const inputField = document.getElementById("inputField")
 cityForm.addEventListener('submit', (event)=>{ // Step 1:
     event.preventDefault();
 
     cityForm.addEventListener('submit', async ()=> { // Step 2:
-        const citySearch = await weatherInfo.getWeatherInfo('London'); //Step 3:
+        const citySearch = await weatherInfo.getWeatherInfo(inputField.value); //Step 3:
         weatherDataDisplayed(citySearch); // Step 13;
     
     })
