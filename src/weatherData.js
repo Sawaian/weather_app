@@ -17,17 +17,27 @@ const weatherInfo = (()=>{
         // We are returning the city name and the temperature.
     }
     // Async lets the code work and wait for the requests.
+
+    async function fetchWeatherInfo(location){
+        let response = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=cf59f533d7699be0364c16aa6a3d8741`;
+        const newCity = await fetch(response, { mode: 'cors'}) 
+        return newCity;
+    }
+
     async function getWeatherInfo(location){ //Step 4:
         //Step 5: A vaariable set up to hold the location we request.
-        let cityLocation = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=cf59f533d7699be0364c16aa6a3d8741`;
+
         // Step 6: will attempt to resolve what is within this codeblock.
         try{
+
+            let newCity = await fetchWeatherInfo(location);
             //Step 7: newCity will await on fetch to be resolved before continuing.
-            const newCity = await fetch(cityLocation, { mode: 'cors'}) 
         
             //Step 8: calls our weatherJson function to paass the fetch data.
             // waits for newCity to resolve.
-            const cityData = weatherJson(await newCity.json()) 
+           
+            const cityData = weatherJson(await newCity.json());
+
             //Step 11:
             return cityData;
             }//Step 8b: else will ddisplay an error.
