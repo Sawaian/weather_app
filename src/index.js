@@ -1,6 +1,6 @@
 import { domGenerator, weatherDataDisplayed } from "./weatherDom";
-import './styles.css';
 import { weatherInfo } from "./weatherData";
+import './styles.css';
 
 const cityForm = document.getElementById("location");
 const inputField = document.getElementById("inputField")

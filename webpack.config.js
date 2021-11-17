@@ -6,12 +6,20 @@ module.exports = {
   devtool: 'inline-source-map',
   module: {
     rules: [
-      { test: /\.css$/, use: 'css-loader' },
-      { test: /\.ts$/, use: 'ts-loader' },
-    ],
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
   },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
 };
+
+//      { test: /\.css$/, use: 'css-loader' },
+//{ test: /\.ts$/, use: 'ts-loader' },
