@@ -8,7 +8,7 @@ cityForm.addEventListener('submit', (event)=>{ // Step 1:
     event.preventDefault();
 
     cityForm.addEventListener('submit', async ()=> { // Step 2:
-        const citySearch = await weatherInfo.getWeatherInfo(inputField.value); //Step 3:
+        const citySearch = await weatherInfo.useWeatherInfo(inputField.value); //Step 3:
         weatherDataDisplayed(citySearch); // Step 13;
     
     })
