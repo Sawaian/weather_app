@@ -1,8 +1,6 @@
 .navBar{
-    border: solid;
     display: flex;
     background-color: royalblue;
-    color: wheat;
     padding: 30px;
     box-sizing: border-box;
     position:fixed;
@@ -12,12 +10,16 @@
 }
 
 .container{
-    display: flex;
+  display: flex;
   max-width: 100%;
   overflow: hidden;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 0.5fr repeat(4, 1fr);
   margin-top: 100px;
-  background-color: black;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
 }
